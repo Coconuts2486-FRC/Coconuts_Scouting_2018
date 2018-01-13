@@ -11,13 +11,13 @@ import java.util.Date;
 import java.awt.event.ActionEvent;
 
 public class Main_Panel extends JPanel {
-	private JTextField RegionalFeild;
-	private JTextField DateField;
-	private JTextField LastNameField;
-	private JTextField FirstNameField;
+	public static JTextField RegionalFeild;
+	public static JTextField DateField;
+	public static JTextField LastNameField;
+	public static JTextField FirstNameField;
 	GUI_Colors colors = new GUI_Colors();
 	All_Panels panels = new All_Panels();
-	User_Data userdata = new User_Data();
+	
 	/**
 	 * Create the panel.
 	 */
@@ -100,12 +100,6 @@ public class Main_Panel extends JPanel {
 		icon.setIcon(image);
 		add(icon);
 		
-		FirstNameField.setText(userdata.FirstName);
-		System.out.println(userdata.LastName);
-		LastNameField.setText(userdata.LastName);
-		Date date = new Date();
-		DateField.setText(Integer.toString(date.getDate()));
-		RegionalFeild.setText(userdata.Regional);
 		
 	}
 }

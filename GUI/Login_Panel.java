@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JRadioButton;
@@ -20,7 +21,6 @@ public class Login_Panel extends JPanel {
 	private JRadioButton rdbtnHustonChampionship;
 	private JRadioButton rdbtnAzNorth;
 	private JRadioButton rdbtnLosAngelesRegional;
-	User_Data userdata = new User_Data();
 
 	/**
 	 * Create the panel.
@@ -59,17 +59,23 @@ public class Login_Panel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if(!first.getText().equals("")&&!last.getText().equals("")) {
 				if(rdbtnAzNorth.isSelected()||rdbtnLosAngelesRegional.isSelected()||rdbtnHustonChampionship.isSelected()) {
-					userdata.FirstName=first.getText();
-					userdata.LastName=last.getText();
-					System.out.println("-----"+last.getText());
+					User_Data.FirstName=first.getText();
+					Main_Panel.FirstNameField.setText(User_Data.FirstName);
+					User_Data.LastName=last.getText();
+					Main_Panel.LastNameField.setText(User_Data.LastName);
+					Date date = new Date();
+					Main_Panel.DateField.setText(date.toString());
 					if(rdbtnAzNorth.isSelected()) {
-						userdata.Regional="AZ North";
+						User_Data.Regional="AZ North";
+						Main_Panel.RegionalFeild.setText(User_Data.Regional);
 						}
 					if(rdbtnLosAngelesRegional.isSelected()) {
-						userdata.Regional="Los Angeles";
+						User_Data.Regional="Los Angeles";
+						Main_Panel.RegionalFeild.setText(User_Data.Regional);
 					}
 					if(rdbtnHustonChampionship.isSelected()) {
-						userdata.Regional="Huston Championship";
+						User_Data.Regional="Huston Championship";
+						Main_Panel.RegionalFeild.setText(User_Data.Regional);
 					}
 					
 					Main_Frame.main_panel.removeAll();
@@ -80,6 +86,7 @@ public class Login_Panel extends JPanel {
 					Main_Frame.main_panel.add(panels.main);
 					Main_Frame.main_panel.repaint();
 					Main_Frame.main_panel.revalidate();	
+					
 				}
 				}
 				
