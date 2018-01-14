@@ -26,6 +26,13 @@ public class Main_Panel extends JPanel {
 		setLayout(null);
 		
 		JButton btnNewButton = new JButton("Logout");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CSV csv 	= new CSV();
+				csv.WriteToFile();
+				System.out.println("Done");
+			}
+		});
 		btnNewButton.setBounds(6, 399, 290, 70);
 		add(btnNewButton);
 		
