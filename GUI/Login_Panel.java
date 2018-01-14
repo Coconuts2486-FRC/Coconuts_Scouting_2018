@@ -18,9 +18,9 @@ public class Login_Panel extends JPanel {
 	private JTextField last;
 	GUI_Colors colors = new GUI_Colors();
 	All_Panels panels = new All_Panels();
-	private JRadioButton rdbtnHustonChampionship;
+	private JRadioButton rdbtnHoustonChampionship;
 	private JRadioButton rdbtnAzNorth;
-	private JRadioButton rdbtnLosAngelesRegional;
+	private JRadioButton rdbtnVenturaRegional;
 
 	/**
 	 * Create the panel.
@@ -58,7 +58,7 @@ public class Login_Panel extends JPanel {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(!first.getText().equals("")&&!last.getText().equals("")) {
-				if(rdbtnAzNorth.isSelected()||rdbtnLosAngelesRegional.isSelected()||rdbtnHustonChampionship.isSelected()) {
+				if(rdbtnAzNorth.isSelected()||rdbtnVenturaRegional.isSelected()||rdbtnHoustonChampionship.isSelected()) {
 					User_Data.FirstName=first.getText();
 					Main_Panel.FirstNameField.setText(User_Data.FirstName);
 					User_Data.LastName=last.getText();
@@ -69,11 +69,11 @@ public class Login_Panel extends JPanel {
 						User_Data.Regional="AZ North";
 						Main_Panel.RegionalFeild.setText(User_Data.Regional);
 						}
-					if(rdbtnLosAngelesRegional.isSelected()) {
-						User_Data.Regional="Los Angeles";
+					if(rdbtnVenturaRegional.isSelected()) {
+						User_Data.Regional="Ventura";
 						Main_Panel.RegionalFeild.setText(User_Data.Regional);
 					}
-					if(rdbtnHustonChampionship.isSelected()) {
+					if(rdbtnHoustonChampionship.isSelected()) {
 						User_Data.Regional="Huston Championship";
 						Main_Panel.RegionalFeild.setText(User_Data.Regional);
 					}
@@ -112,34 +112,34 @@ public class Login_Panel extends JPanel {
 		rdbtnAzNorth.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				rdbtnAzNorth.setSelected(true);
-				rdbtnLosAngelesRegional.setSelected(false);
-				rdbtnHustonChampionship.setSelected(false);
+				rdbtnVenturaRegional.setSelected(false);
+				rdbtnHoustonChampionship.setSelected(false);
 			}
 		});
 		rdbtnAzNorth.setBounds(290, 377, 200, 23);
 		add(rdbtnAzNorth);
 		
-		rdbtnLosAngelesRegional = new JRadioButton("Los Angeles Regional");
-		rdbtnLosAngelesRegional.addActionListener(new ActionListener() {
+		rdbtnVenturaRegional = new JRadioButton("Ventura Regional");
+		rdbtnVenturaRegional.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				rdbtnAzNorth.setSelected(false);
-				rdbtnLosAngelesRegional.setSelected(true);
-				rdbtnHustonChampionship.setSelected(false);
+				rdbtnVenturaRegional.setSelected(true);
+				rdbtnHoustonChampionship.setSelected(false);
 			}
 		});
-		rdbtnLosAngelesRegional.setBounds(290, 349, 200, 23);
-		add(rdbtnLosAngelesRegional);
+		rdbtnVenturaRegional.setBounds(290, 349, 200, 23);
+		add(rdbtnVenturaRegional);
 		
-		rdbtnHustonChampionship = new JRadioButton("Huston Championship");
-		rdbtnHustonChampionship.addActionListener(new ActionListener() {
+		rdbtnHoustonChampionship = new JRadioButton("Huston Championship");
+		rdbtnHoustonChampionship.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				rdbtnAzNorth.setSelected(false);
-				rdbtnLosAngelesRegional.setSelected(false);
-				rdbtnHustonChampionship.setSelected(true);
+				rdbtnVenturaRegional.setSelected(false);
+				rdbtnHoustonChampionship.setSelected(true);
 			}
 		});
-		rdbtnHustonChampionship.setBounds(290, 322, 200, 23);
-		add(rdbtnHustonChampionship);
+		rdbtnHoustonChampionship.setBounds(290, 322, 200, 23);
+		add(rdbtnHoustonChampionship);
 
 	}
 }

@@ -30,6 +30,20 @@ public class Main_Panel extends JPanel {
 		add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("New Entry");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Entry_Page_Setup EPS = new Entry_Page_Setup();
+				EPS.Clear();
+				Main_Frame.main_panel.removeAll();
+				Main_Frame.main_panel.repaint();
+				Main_Frame.main_panel.revalidate();
+				
+				
+				Main_Frame.main_panel.add(panels.entry);
+				Main_Frame.main_panel.repaint();
+				Main_Frame.main_panel.revalidate();
+			}
+		});
 		btnNewButton_1.setBounds(299, 399, 290, 70);
 		add(btnNewButton_1);
 		
@@ -91,7 +105,7 @@ public class Main_Panel extends JPanel {
 		
 		JLabel icon = new JLabel("");
 		icon.setBounds(299, 6, 290, 290);
-		String path="./Resources/Coconuts.png";//./Resources
+		String path="./Resources/Coconuts.png";
 		
 		ImageIcon myimage = new ImageIcon (path);
 		Image img = myimage.getImage();

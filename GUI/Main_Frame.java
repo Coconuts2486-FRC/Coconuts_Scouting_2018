@@ -16,6 +16,7 @@ public class Main_Frame extends JFrame {
 	private JPanel contentPane;
 	All_Panels panels = new All_Panels();
 	public static JPanel main_panel;
+	GUI_Colors colors = new GUI_Colors();
 
 	/**
 	 * Launch the application.
@@ -37,10 +38,11 @@ public class Main_Frame extends JFrame {
 	 * Create the frame.
 	 */
 	public Main_Frame() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 501);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.BLACK);
+		contentPane.setBackground(colors.yellow);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
