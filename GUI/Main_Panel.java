@@ -30,9 +30,12 @@ public class Main_Panel extends JPanel {
 		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(Game_Array.GameList.isEmpty()) {
+					
+				}else {
 				Serelization serelize = new Serelization();
 				serelize.Serelize();
-				System.out.println("Done");
+				System.exit(0);}
 			}
 		});
 		btnNewButton.setBounds(6, 399, 290, 70);
