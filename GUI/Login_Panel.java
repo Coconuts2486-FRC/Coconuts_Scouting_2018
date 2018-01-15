@@ -8,10 +8,12 @@ import javax.swing.JTextField;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.Date;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JRadioButton;
+import java.awt.Color;
 
 public class Login_Panel extends JPanel {
 	private JTextField first;
@@ -37,10 +39,12 @@ public class Login_Panel extends JPanel {
 		add(lblWelcomeToTeam);
 		
 		JLabel lblFirstName = new JLabel("First Name:");
+		lblFirstName.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
 		lblFirstName.setBounds(6, 353, 100, 16);
 		add(lblFirstName);
 		
 		JLabel lblLastName = new JLabel("Last Name:");
+		lblLastName.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
 		lblLastName.setBounds(6, 381, 100, 16);
 		add(lblLastName);
 		
@@ -55,6 +59,7 @@ public class Login_Panel extends JPanel {
 		last.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Enter");
+		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(!first.getText().equals("")&&!last.getText().equals("")) {
@@ -74,7 +79,7 @@ public class Login_Panel extends JPanel {
 						Main_Panel.RegionalFeild.setText(User_Data.Regional);
 					}
 					if(rdbtnHoustonChampionship.isSelected()) {
-						User_Data.Regional="Huston Championship";
+						User_Data.Regional="Houston Championship";
 						Main_Panel.RegionalFeild.setText(User_Data.Regional);
 					}
 					
@@ -97,8 +102,12 @@ public class Login_Panel extends JPanel {
 		btnNewButton.setBounds(6, 409, 583, 55);
 		add(btnNewButton);
 		
-		JLabel icon = new JLabel("");
+		JLabel icon = new JLabel();
 		icon.setBounds(6, 73, 272, 272);
+		File file = new File("./Resources");
+		if(!file.exists()) {
+		file.mkdir();
+		}
 		String path="./Resources/Coconuts.png";//./Resources
 		
 		ImageIcon myimage = new ImageIcon (path);
@@ -109,6 +118,8 @@ public class Login_Panel extends JPanel {
 		add(icon);
 		
 		rdbtnAzNorth = new JRadioButton("AZ North Regional");
+		rdbtnAzNorth.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
+		rdbtnAzNorth.setBackground(colors.red);
 		rdbtnAzNorth.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				rdbtnAzNorth.setSelected(true);
@@ -116,10 +127,12 @@ public class Login_Panel extends JPanel {
 				rdbtnHoustonChampionship.setSelected(false);
 			}
 		});
-		rdbtnAzNorth.setBounds(290, 377, 200, 23);
+		rdbtnAzNorth.setBounds(290, 377, 300, 23);
 		add(rdbtnAzNorth);
 		
 		rdbtnVenturaRegional = new JRadioButton("Ventura Regional");
+		rdbtnVenturaRegional.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
+		rdbtnVenturaRegional.setBackground(colors.red);
 		rdbtnVenturaRegional.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				rdbtnAzNorth.setSelected(false);
@@ -127,10 +140,12 @@ public class Login_Panel extends JPanel {
 				rdbtnHoustonChampionship.setSelected(false);
 			}
 		});
-		rdbtnVenturaRegional.setBounds(290, 349, 200, 23);
+		rdbtnVenturaRegional.setBounds(290, 349, 300, 23);
 		add(rdbtnVenturaRegional);
 		
-		rdbtnHoustonChampionship = new JRadioButton("Huston Championship");
+		rdbtnHoustonChampionship = new JRadioButton("Houston Championship");
+		rdbtnHoustonChampionship.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
+		rdbtnHoustonChampionship.setBackground(colors.red);
 		rdbtnHoustonChampionship.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				rdbtnAzNorth.setSelected(false);
@@ -138,7 +153,7 @@ public class Login_Panel extends JPanel {
 				rdbtnHoustonChampionship.setSelected(true);
 			}
 		});
-		rdbtnHoustonChampionship.setBounds(290, 322, 200, 23);
+		rdbtnHoustonChampionship.setBounds(290, 322, 300, 23);
 		add(rdbtnHoustonChampionship);
 
 	}

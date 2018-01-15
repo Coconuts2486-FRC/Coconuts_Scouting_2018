@@ -1,11 +1,6 @@
 public class Password_Maker {
 
-	public static String pas() {
-	String result = makepassword(5);
-	System.out.print(result);
-	return result;
-}
-public static String makepassword(int length){
+public String makepassword(int length){
 	String password = "";
 	for (int i=0; i<length;i++){
 	password = password + randomCharacter("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");

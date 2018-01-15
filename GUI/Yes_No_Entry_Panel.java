@@ -18,7 +18,20 @@ public class Yes_No_Entry_Panel extends JPanel {
 		btnYes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Entry_Page_Setup EPS = new Entry_Page_Setup();
+				if(Game_Array.allowEntry) {
+					EPS.EnterData();
+				}
+				
 				EPS.Clear();
+				Game_Array.allowEntry=false;
+				Main_Frame.main_panel.removeAll();
+				Main_Frame.main_panel.repaint();
+				Main_Frame.main_panel.revalidate();
+				
+				
+				Main_Frame.main_panel.add(panels.main);
+				Main_Frame.main_panel.repaint();
+				Main_Frame.main_panel.revalidate();
 			}
 		});
 		add(btnYes);

@@ -14,10 +14,10 @@ public class Entry_Page extends JPanel {
 	All_Panels panels = new All_Panels();
 	GUI_Colors colors = new GUI_Colors();
 	public static JTextField Auto_switch;
-	public static JTextField Auto_leaver;
+	public static JTextField Auto_lever;
 	public static JTextField Auto_comments;
 	public static JTextField Teleop_switch;
-	public static JTextField Teleop_leaver;
+	public static JTextField Teleop_lever;
 	public static JTextField Teleop_vault;
 	public static JTextField Teleop_comments;
 	public static JRadioButton rdbtnCrossedLine;
@@ -53,16 +53,19 @@ public class Entry_Page extends JPanel {
 		Auto.add(lblBlocksInSwitch);
 		
 		JButton Auto_switchAdd = new JButton("+");
+		Auto_switchAdd.setBackground(Color.WHITE);
+		Auto_switchAdd.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		Auto_switchAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int x = Integer.parseInt(Auto_switch.getText())+1;
 				Auto_switch.setText(Integer.toString(x));
 			}
 		});
-		Auto_switchAdd.setBounds(20, 153, 30, 30);
+		Auto_switchAdd.setBounds(20, 153, 40, 40);
 		Auto.add(Auto_switchAdd);
 		
 		JButton Auto_switchSubtract = new JButton("-");
+		Auto_switchSubtract.setBackground(Color.WHITE);
 		Auto_switchSubtract.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int x = Integer.parseInt(Auto_switch.getText());
@@ -72,7 +75,7 @@ public class Entry_Page extends JPanel {
 				}
 			}
 		});
-		Auto_switchSubtract.setBounds(96, 153, 30, 30);
+		Auto_switchSubtract.setBounds(96, 153, 40, 40);
 		Auto.add(Auto_switchSubtract);
 		
 		Auto_switch = new JTextField();
@@ -81,40 +84,44 @@ public class Entry_Page extends JPanel {
 		Auto.add(Auto_switch);
 		Auto_switch.setColumns(10);
 		
-		JLabel lblBlocksInLeaver = new JLabel("Blocks in Leaver:");
-		lblBlocksInLeaver.setBounds(20, 195, 106, 16);
-		Auto.add(lblBlocksInLeaver);
+		JLabel lblBlocksInlever = new JLabel("Blocks in lever:");
+		lblBlocksInlever.setBounds(20, 195, 106, 16);
+		Auto.add(lblBlocksInlever);
 		
-		JButton Auto_leaverAdd = new JButton("+");
-		Auto_leaverAdd.addActionListener(new ActionListener() {
+		JButton Auto_leverAdd = new JButton("+");
+		Auto_leverAdd.setBackground(Color.WHITE);
+		Auto_leverAdd.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
+		Auto_leverAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int x = Integer.parseInt(Auto_leaver.getText())+1;
-				Auto_leaver.setText(Integer.toString(x));
+				int x = Integer.parseInt(Auto_lever.getText())+1;
+				Auto_lever.setText(Integer.toString(x));
 			}
 		});
-		Auto_leaverAdd.setBounds(20, 223, 30, 30);
-		Auto.add(Auto_leaverAdd);
+		Auto_leverAdd.setBounds(20, 223, 40, 40);
+		Auto.add(Auto_leverAdd);
 		
-		JButton Auto_leaverSubtract = new JButton("-");
-		Auto_leaverSubtract.addActionListener(new ActionListener() {
+		JButton Auto_leverSubtract = new JButton("-");
+		Auto_leverSubtract.setBackground(Color.WHITE);
+		Auto_leverSubtract.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int x = Integer.parseInt(Auto_leaver.getText());
-				int y = Integer.parseInt(Auto_leaver.getText())-1;
+				int x = Integer.parseInt(Auto_lever.getText());
+				int y = Integer.parseInt(Auto_lever.getText())-1;
 				if(!(x==0)) {
-					Auto_leaver.setText(Integer.toString(y));
+					Auto_lever.setText(Integer.toString(y));
 				}
 			}
 		});
-		Auto_leaverSubtract.setBounds(96, 223, 30, 30);
-		Auto.add(Auto_leaverSubtract);
+		Auto_leverSubtract.setBounds(96, 223, 40, 40);
+		Auto.add(Auto_leverSubtract);
 		
-		Auto_leaver = new JTextField();
-		Auto_leaver.setEditable(false);
-		Auto_leaver.setBounds(138, 224, 130, 26);
-		Auto.add(Auto_leaver);
-		Auto_leaver.setColumns(10);
+		Auto_lever = new JTextField();
+		Auto_lever.setEditable(false);
+		Auto_lever.setBounds(138, 224, 130, 26);
+		Auto.add(Auto_lever);
+		Auto_lever.setColumns(10);
 		
 		rdbtnCrossedLine = new JRadioButton("Crossed Line");
+		rdbtnCrossedLine.setBackground(colors.red);
 		rdbtnCrossedLine.setBounds(20, 265, 269, 23);
 		Auto.add(rdbtnCrossedLine);
 		
@@ -166,16 +173,19 @@ public class Entry_Page extends JPanel {
 		Teleop.add(lblBlocksInSwitch_1);
 		
 		JButton Teleop_switchAdd = new JButton("+");
+		Teleop_switchAdd.setBackground(Color.WHITE);
+		Teleop_switchAdd.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		Teleop_switchAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int x = Integer.parseInt(Teleop_switch.getText())+1;
 				Teleop_switch.setText(Integer.toString(x));
 			}
 		});
-		Teleop_switchAdd.setBounds(20, 56, 30, 30);
+		Teleop_switchAdd.setBounds(20, 56, 40, 40);
 		Teleop.add(Teleop_switchAdd);
 		
 		JButton Teleop_switchSubtract = new JButton("-");
+		Teleop_switchSubtract.setBackground(Color.WHITE);
 		Teleop_switchSubtract.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int x = Integer.parseInt(Teleop_switch.getText());
@@ -185,7 +195,7 @@ public class Entry_Page extends JPanel {
 				}
 			}
 		});
-		Teleop_switchSubtract.setBounds(96, 56, 30, 30);
+		Teleop_switchSubtract.setBounds(96, 56, 40, 40);
 		Teleop.add(Teleop_switchSubtract);
 		
 		Teleop_switch = new JTextField();
@@ -194,54 +204,60 @@ public class Entry_Page extends JPanel {
 		Teleop.add(Teleop_switch);
 		Teleop_switch.setColumns(10);
 		
-		JLabel lblBlocksInLeaver_1 = new JLabel("Blocks in Leaver:");
-		lblBlocksInLeaver_1.setBounds(20, 98, 106, 16);
-		Teleop.add(lblBlocksInLeaver_1);
+		JLabel lblBlocksInlever_1 = new JLabel("Blocks in lever:");
+		lblBlocksInlever_1.setBounds(20, 98, 106, 16);
+		Teleop.add(lblBlocksInlever_1);
 		
-		JButton Teleop_leaverAdd = new JButton("+");
-		Teleop_leaverAdd.addActionListener(new ActionListener() {
+		JButton Teleop_leverAdd = new JButton("+");
+		Teleop_leverAdd.setBackground(Color.WHITE);
+		Teleop_leverAdd.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
+		Teleop_leverAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int x = Integer.parseInt(Teleop_leaver.getText())+1;
-				Teleop_leaver.setText(Integer.toString(x));
+				int x = Integer.parseInt(Teleop_lever.getText())+1;
+				Teleop_lever.setText(Integer.toString(x));
 			}
 		});
-		Teleop_leaverAdd.setBounds(20, 126, 30, 30);
-		Teleop.add(Teleop_leaverAdd);
+		Teleop_leverAdd.setBounds(20, 126, 40, 40);
+		Teleop.add(Teleop_leverAdd);
 		
-		JButton Teleop_leaverSubtract = new JButton("-");
-		Teleop_leaverSubtract.addActionListener(new ActionListener() {
+		JButton Teleop_leverSubtract = new JButton("-");
+		Teleop_leverSubtract.setBackground(Color.WHITE);
+		Teleop_leverSubtract.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int x = Integer.parseInt(Teleop_leaver.getText());
-				int y = Integer.parseInt(Teleop_leaver.getText())-1;
+				int x = Integer.parseInt(Teleop_lever.getText());
+				int y = Integer.parseInt(Teleop_lever.getText())-1;
 				if(!(x==0)) {
-					Teleop_leaver.setText(Integer.toString(y));
+					Teleop_lever.setText(Integer.toString(y));
 				}
 			}
 		});
-		Teleop_leaverSubtract.setBounds(96, 126, 30, 30);
-		Teleop.add(Teleop_leaverSubtract);
+		Teleop_leverSubtract.setBounds(96, 126, 40, 40);
+		Teleop.add(Teleop_leverSubtract);
 		
-		Teleop_leaver = new JTextField();
-		Teleop_leaver.setEditable(false);
-		Teleop_leaver.setBounds(138, 127, 130, 26);
-		Teleop.add(Teleop_leaver);
-		Teleop_leaver.setColumns(10);
+		Teleop_lever = new JTextField();
+		Teleop_lever.setEditable(false);
+		Teleop_lever.setBounds(138, 127, 130, 26);
+		Teleop.add(Teleop_lever);
+		Teleop_lever.setColumns(10);
 		
 		JLabel lblBlocksInVault = new JLabel("Blocks in Vault:");
 		lblBlocksInVault.setBounds(20, 168, 106, 16);
 		Teleop.add(lblBlocksInVault);
 		
 		JButton Teleop_vaultAdd = new JButton("+");
+		Teleop_vaultAdd.setBackground(Color.WHITE);
+		Teleop_vaultAdd.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		Teleop_vaultAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int x = Integer.parseInt(Teleop_vault.getText())+1;
 				Teleop_vault.setText(Integer.toString(x));
 			}
 		});
-		Teleop_vaultAdd.setBounds(20, 196, 30, 30);
+		Teleop_vaultAdd.setBounds(20, 196, 40, 40);
 		Teleop.add(Teleop_vaultAdd);
 		
 		JButton Teleop_vaultSubtract = new JButton("-");
+		Teleop_vaultSubtract.setBackground(Color.WHITE);
 		Teleop_vaultSubtract.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int x = Integer.parseInt(Teleop_vault.getText());
@@ -251,7 +267,7 @@ public class Entry_Page extends JPanel {
 				}
 			}
 		});
-		Teleop_vaultSubtract.setBounds(96, 196, 30, 30);
+		Teleop_vaultSubtract.setBounds(96, 196, 40, 40);
 		Teleop.add(Teleop_vaultSubtract);
 		
 		Teleop_vault = new JTextField();
@@ -260,6 +276,7 @@ public class Entry_Page extends JPanel {
 		Teleop_vault.setColumns(10);
 		
 		rdbtnClimbed = new JRadioButton("Climbed");
+		rdbtnClimbed.setBackground(colors.red);
 		rdbtnClimbed.setBounds(20, 238, 269, 23);
 		Teleop.add(rdbtnClimbed);
 		
@@ -273,6 +290,7 @@ public class Entry_Page extends JPanel {
 		Teleop.add(lblComments_1);
 		
 		JButton btnSave = new JButton("Save");
+		btnSave.setBackground(Color.WHITE);
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Entry_Page_Setup EPS = new Entry_Page_Setup();
@@ -283,6 +301,7 @@ public class Entry_Page extends JPanel {
 		Teleop.add(btnSave);
 		
 		JButton btnCancel = new JButton("Cancel");
+		btnCancel.setBackground(Color.WHITE);
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main_Frame.main_panel.removeAll();
@@ -312,10 +331,12 @@ public class Entry_Page extends JPanel {
 		
 		rdbtnRedFlag = new JRadioButton("Red Flag");
 		rdbtnRedFlag.setBounds(6, 66, 103, 23);
+		rdbtnRedFlag.setBackground(colors.red);
 		General.add(rdbtnRedFlag);
 		
 		rdbtnYellowFlag = new JRadioButton("Yellow Flag");
 		rdbtnYellowFlag.setBounds(6, 31, 103, 23);
+		rdbtnYellowFlag.setBackground(colors.red);
 		General.add(rdbtnYellowFlag);
 		
 		JLabel lblDrivetrain = new JLabel("Drivetrain:");
@@ -323,6 +344,7 @@ public class Entry_Page extends JPanel {
 		General.add(lblDrivetrain);
 		
 		rdbtnMechanum = new JRadioButton("Mechanum");
+		rdbtnMechanum.setBackground(colors.red);
 		rdbtnMechanum.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				rdbtnMechanum.setSelected(true);
@@ -335,6 +357,7 @@ public class Entry_Page extends JPanel {
 		General.add(rdbtnMechanum);
 		
 		rdbtnWestCoast = new JRadioButton("West Coast");
+		rdbtnWestCoast.setBackground(colors.red);
 		rdbtnWestCoast.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				rdbtnMechanum.setSelected(false);
@@ -346,6 +369,7 @@ public class Entry_Page extends JPanel {
 		General.add(rdbtnWestCoast);
 		
 		rdbtnSwerve = new JRadioButton("Swerve");
+		rdbtnSwerve.setBackground(colors.red);
 		rdbtnSwerve.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				rdbtnMechanum.setSelected(false);

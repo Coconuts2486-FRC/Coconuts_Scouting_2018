@@ -7,6 +7,7 @@ import java.awt.Image;
 
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.Date;
 import java.awt.event.ActionEvent;
 
@@ -26,10 +27,11 @@ public class Main_Panel extends JPanel {
 		setLayout(null);
 		
 		JButton btnNewButton = new JButton("Logout");
+		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CSV csv 	= new CSV();
-				csv.WriteToFile();
+				Serelization serelize = new Serelization();
+				serelize.Serelize();
 				System.out.println("Done");
 			}
 		});
@@ -37,6 +39,7 @@ public class Main_Panel extends JPanel {
 		add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("New Entry");
+		btnNewButton_1.setBackground(Color.WHITE);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Entry_Page_Setup EPS = new Entry_Page_Setup();
@@ -72,29 +75,30 @@ public class Main_Panel extends JPanel {
 		
 		RegionalFeild = new JTextField();
 		RegionalFeild.setEditable(false);
-		RegionalFeild.setBounds(93, 366, 200, 26);
+		RegionalFeild.setBounds(93, 366, 250, 26);
 		add(RegionalFeild);
 		RegionalFeild.setColumns(10);
 		
 		DateField = new JTextField();
 		DateField.setEditable(false);
-		DateField.setBounds(93, 338, 200, 26);
+		DateField.setBounds(93, 338, 250, 26);
 		add(DateField);
 		DateField.setColumns(10);
 		
 		LastNameField = new JTextField();
 		LastNameField.setEditable(false);
-		LastNameField.setBounds(93, 310, 200, 26);
+		LastNameField.setBounds(93, 310, 250, 26);
 		add(LastNameField);
 		LastNameField.setColumns(10);
 		
 		FirstNameField = new JTextField();
 		FirstNameField.setEditable(false);
-		FirstNameField.setBounds(93, 282, 200, 26);
+		FirstNameField.setBounds(93, 282, 250, 26);
 		add(FirstNameField);
 		FirstNameField.setColumns(10);
 		
 		JButton btnEditInfo = new JButton("Edit Info");
+		btnEditInfo.setBackground(Color.WHITE);
 		btnEditInfo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main_Frame.main_panel.removeAll();
@@ -112,6 +116,7 @@ public class Main_Panel extends JPanel {
 		
 		JLabel icon = new JLabel("");
 		icon.setBounds(299, 6, 290, 290);
+		
 		String path="./Resources/Coconuts.png";
 		
 		ImageIcon myimage = new ImageIcon (path);

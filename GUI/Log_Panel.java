@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class Log_Panel extends JPanel {
 	GUI_Colors colors = new GUI_Colors();
@@ -21,6 +22,7 @@ public class Log_Panel extends JPanel {
 		setBackground(colors.red);
 		
 		JButton btnDelete = new JButton("Delete");
+		btnDelete.setBackground(Color.WHITE);
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main_Frame.main_panel.removeAll();
@@ -33,7 +35,7 @@ public class Log_Panel extends JPanel {
 				Main_Frame.main_panel.revalidate();
 			}
 		});
-		btnDelete.setBounds(6, 435, 178, 29);
+		btnDelete.setBounds(6, 435, 178, 20);
 		add(btnDelete);
 		
 		
@@ -45,13 +47,14 @@ public class Log_Panel extends JPanel {
 		add(list);
 
 		JButton btnEdit = new JButton("Edit");
+		btnEdit.setBackground(Color.WHITE);
 		btnEdit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			Entry_Page_Setup ESP = new Entry_Page_Setup();
 			ESP.LoadData(list.getSelectedIndex());
 			}
 		});
-		btnEdit.setBounds(6, 413, 178, 29);
+		btnEdit.setBounds(6, 413, 178, 20);
 		add(btnEdit);
 	}
 }
