@@ -14,10 +14,10 @@ public class Entry_Page extends JPanel {
 	All_Panels panels = new All_Panels();
 	GUI_Colors colors = new GUI_Colors();
 	public static JTextField Auto_switch;
-	public static JTextField Auto_lever;
+	public static JTextField Auto_Scale;
 	public static JTextField Auto_comments;
 	public static JTextField Teleop_switch;
-	public static JTextField Teleop_lever;
+	public static JTextField Teleop_Scale;
 	public static JTextField Teleop_vault;
 	public static JTextField Teleop_comments;
 	public static JRadioButton rdbtnCrossedLine;
@@ -84,41 +84,41 @@ public class Entry_Page extends JPanel {
 		Auto.add(Auto_switch);
 		Auto_switch.setColumns(10);
 		
-		JLabel lblBlocksInlever = new JLabel("Blocks in lever:");
-		lblBlocksInlever.setBounds(20, 195, 106, 16);
-		Auto.add(lblBlocksInlever);
+		JLabel lblBlocksInScale = new JLabel("Blocks in Scale:");
+		lblBlocksInScale.setBounds(20, 195, 106, 16);
+		Auto.add(lblBlocksInScale);
 		
-		JButton Auto_leverAdd = new JButton("+");
-		Auto_leverAdd.setBackground(Color.WHITE);
-		Auto_leverAdd.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
-		Auto_leverAdd.addActionListener(new ActionListener() {
+		JButton Auto_ScaleAdd = new JButton("+");
+		Auto_ScaleAdd.setBackground(Color.WHITE);
+		Auto_ScaleAdd.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
+		Auto_ScaleAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int x = Integer.parseInt(Auto_lever.getText())+1;
-				Auto_lever.setText(Integer.toString(x));
+				int x = Integer.parseInt(Auto_Scale.getText())+1;
+				Auto_Scale.setText(Integer.toString(x));
 			}
 		});
-		Auto_leverAdd.setBounds(20, 223, 40, 40);
-		Auto.add(Auto_leverAdd);
+		Auto_ScaleAdd.setBounds(20, 223, 40, 40);
+		Auto.add(Auto_ScaleAdd);
 		
-		JButton Auto_leverSubtract = new JButton("-");
-		Auto_leverSubtract.setBackground(Color.WHITE);
-		Auto_leverSubtract.addActionListener(new ActionListener() {
+		JButton Auto_ScaleSubtract = new JButton("-");
+		Auto_ScaleSubtract.setBackground(Color.WHITE);
+		Auto_ScaleSubtract.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int x = Integer.parseInt(Auto_lever.getText());
-				int y = Integer.parseInt(Auto_lever.getText())-1;
+				int x = Integer.parseInt(Auto_Scale.getText());
+				int y = Integer.parseInt(Auto_Scale.getText())-1;
 				if(!(x==0)) {
-					Auto_lever.setText(Integer.toString(y));
+					Auto_Scale.setText(Integer.toString(y));
 				}
 			}
 		});
-		Auto_leverSubtract.setBounds(96, 223, 40, 40);
-		Auto.add(Auto_leverSubtract);
+		Auto_ScaleSubtract.setBounds(96, 223, 40, 40);
+		Auto.add(Auto_ScaleSubtract);
 		
-		Auto_lever = new JTextField();
-		Auto_lever.setEditable(false);
-		Auto_lever.setBounds(138, 224, 130, 26);
-		Auto.add(Auto_lever);
-		Auto_lever.setColumns(10);
+		Auto_Scale = new JTextField();
+		Auto_Scale.setEditable(false);
+		Auto_Scale.setBounds(138, 224, 130, 26);
+		Auto.add(Auto_Scale);
+		Auto_Scale.setColumns(10);
 		
 		rdbtnCrossedLine = new JRadioButton("Crossed Line");
 		rdbtnCrossedLine.setBackground(colors.red);
@@ -204,41 +204,41 @@ public class Entry_Page extends JPanel {
 		Teleop.add(Teleop_switch);
 		Teleop_switch.setColumns(10);
 		
-		JLabel lblBlocksInlever_1 = new JLabel("Blocks in lever:");
-		lblBlocksInlever_1.setBounds(20, 98, 106, 16);
-		Teleop.add(lblBlocksInlever_1);
+		JLabel lblBlocksInScale_1 = new JLabel("Blocks in Scale:");
+		lblBlocksInScale_1.setBounds(20, 98, 106, 16);
+		Teleop.add(lblBlocksInScale_1);
 		
-		JButton Teleop_leverAdd = new JButton("+");
-		Teleop_leverAdd.setBackground(Color.WHITE);
-		Teleop_leverAdd.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
-		Teleop_leverAdd.addActionListener(new ActionListener() {
+		JButton Teleop_ScaleAdd = new JButton("+");
+		Teleop_ScaleAdd.setBackground(Color.WHITE);
+		Teleop_ScaleAdd.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
+		Teleop_ScaleAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int x = Integer.parseInt(Teleop_lever.getText())+1;
-				Teleop_lever.setText(Integer.toString(x));
+				int x = Integer.parseInt(Teleop_Scale.getText())+1;
+				Teleop_Scale.setText(Integer.toString(x));
 			}
 		});
-		Teleop_leverAdd.setBounds(20, 126, 40, 40);
-		Teleop.add(Teleop_leverAdd);
+		Teleop_ScaleAdd.setBounds(20, 126, 40, 40);
+		Teleop.add(Teleop_ScaleAdd);
 		
-		JButton Teleop_leverSubtract = new JButton("-");
-		Teleop_leverSubtract.setBackground(Color.WHITE);
-		Teleop_leverSubtract.addActionListener(new ActionListener() {
+		JButton Teleop_ScaleSubtract = new JButton("-");
+		Teleop_ScaleSubtract.setBackground(Color.WHITE);
+		Teleop_ScaleSubtract.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int x = Integer.parseInt(Teleop_lever.getText());
-				int y = Integer.parseInt(Teleop_lever.getText())-1;
+				int x = Integer.parseInt(Teleop_Scale.getText());
+				int y = Integer.parseInt(Teleop_Scale.getText())-1;
 				if(!(x==0)) {
-					Teleop_lever.setText(Integer.toString(y));
+					Teleop_Scale.setText(Integer.toString(y));
 				}
 			}
 		});
-		Teleop_leverSubtract.setBounds(96, 126, 40, 40);
-		Teleop.add(Teleop_leverSubtract);
+		Teleop_ScaleSubtract.setBounds(96, 126, 40, 40);
+		Teleop.add(Teleop_ScaleSubtract);
 		
-		Teleop_lever = new JTextField();
-		Teleop_lever.setEditable(false);
-		Teleop_lever.setBounds(138, 127, 130, 26);
-		Teleop.add(Teleop_lever);
-		Teleop_lever.setColumns(10);
+		Teleop_Scale = new JTextField();
+		Teleop_Scale.setEditable(false);
+		Teleop_Scale.setBounds(138, 127, 130, 26);
+		Teleop.add(Teleop_Scale);
+		Teleop_Scale.setColumns(10);
 		
 		JLabel lblBlocksInVault = new JLabel("Blocks in Vault:");
 		lblBlocksInVault.setBounds(20, 168, 106, 16);

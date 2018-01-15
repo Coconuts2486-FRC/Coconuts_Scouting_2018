@@ -12,9 +12,9 @@ public class Entry_Page_Setup {
 	// ------------------------------------------------------------------------------------
 	public void Clear() {
 		Entry_Page.Auto_comments.setText("");
-		Entry_Page.Auto_lever.setText("0");
+		Entry_Page.Auto_Scale.setText("0");
 		Entry_Page.Auto_switch.setText("0");
-		Entry_Page.Teleop_lever.setText("0");
+		Entry_Page.Teleop_Scale.setText("0");
 		Entry_Page.Teleop_comments.setText("");
 		Entry_Page.Teleop_switch.setText("0");
 		Entry_Page.Teleop_vault.setText("0");
@@ -35,12 +35,12 @@ public class Entry_Page_Setup {
 	public void EnterData() {
 	Game_Data data = new Game_Data();
 	//Auto--------------------------------------------------------------------
-	data.Auto_blocksInLever=Integer.parseInt(Entry_Page.Auto_lever.getText());
+	data.Auto_blocksInScale=Integer.parseInt(Entry_Page.Auto_Scale.getText());
 	data.Auto_blocksInSwitch=Integer.parseInt(Entry_Page.Auto_switch.getText());
 	data.Auto_crossedLine=Entry_Page.rdbtnCrossedLine.isSelected();
 	data.Auto_comments=Entry_Page.Auto_comments.getText();
 	//Teleop------------------------------------------------------------------
-	data.Teleop_blocksInLever=Integer.parseInt(Entry_Page.Teleop_lever.getText());
+	data.Teleop_blocksInScale=Integer.parseInt(Entry_Page.Teleop_Scale.getText());
 	data.Teleop_blocksInSwitch=Integer.parseInt(Entry_Page.Teleop_switch.getText());
 	data.Teleop_blocksInVault=Integer.parseInt(Entry_Page.Teleop_vault.getText());
 	data.Teleop_climbed=Entry_Page.rdbtnClimbed.isSelected();
@@ -98,9 +98,9 @@ public class Entry_Page_Setup {
 	public void LoadData(int ArrayLocation) {
 		
 		Entry_Page.Auto_comments.setText(Game_Array.GameList.get(ArrayLocation).Auto_comments);
-		Entry_Page.Auto_lever.setText(Integer.toString(Game_Array.GameList.get(ArrayLocation).Auto_blocksInLever));
+		Entry_Page.Auto_Scale.setText(Integer.toString(Game_Array.GameList.get(ArrayLocation).Auto_blocksInScale));
 		Entry_Page.Auto_switch.setText(Integer.toString(Game_Array.GameList.get(ArrayLocation).Auto_blocksInSwitch));
-		Entry_Page.Teleop_lever.setText(Integer.toString(Game_Array.GameList.get(ArrayLocation).Teleop_blocksInLever));
+		Entry_Page.Teleop_Scale.setText(Integer.toString(Game_Array.GameList.get(ArrayLocation).Teleop_blocksInScale));
 		Entry_Page.Teleop_comments.setText(Game_Array.GameList.get(ArrayLocation).Teleop_comments);
 		Entry_Page.Teleop_switch.setText(Integer.toString(Game_Array.GameList.get(ArrayLocation).Teleop_blocksInSwitch));
 		Entry_Page.Teleop_vault.setText(Integer.toString(Game_Array.GameList.get(ArrayLocation).Teleop_blocksInVault));
