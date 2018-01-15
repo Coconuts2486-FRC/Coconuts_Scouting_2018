@@ -1,5 +1,5 @@
 
-public class Game_Data {
+public class Game_Data implements java.io.Serializable {
 int teamNumber;
 int roundNumber;
 //Auto---------------------------------------------------------------------------------
