@@ -29,9 +29,8 @@ public class Entry_Page extends JPanel {
 	public static JRadioButton rdbtnSwerve;
 	public static JTextField teamNumber;
 	public static JTextField roundNumber;
-	/**
-	 * Create the panel.
-	 */
+	public static JTextField Teleop_Opposite_Scale;
+	
 	public Entry_Page() {
 		setBackground(colors.yellow);
 		setLayout(null);
@@ -122,7 +121,7 @@ public class Entry_Page extends JPanel {
 		
 		rdbtnCrossedLine = new JRadioButton("Crossed Line");
 		rdbtnCrossedLine.setBackground(colors.red);
-		rdbtnCrossedLine.setBounds(20, 265, 269, 23);
+		rdbtnCrossedLine.setBounds(96, 316, 193, 23);
 		Auto.add(rdbtnCrossedLine);
 		
 		Auto_comments = new JTextField();
@@ -275,11 +274,6 @@ public class Entry_Page extends JPanel {
 		Teleop.add(Teleop_vault);
 		Teleop_vault.setColumns(10);
 		
-		rdbtnClimbed = new JRadioButton("Climbed");
-		rdbtnClimbed.setBackground(colors.red);
-		rdbtnClimbed.setBounds(20, 238, 269, 23);
-		Teleop.add(rdbtnClimbed);
-		
 		Teleop_comments = new JTextField();
 		Teleop_comments.setBounds(5, 338, 285, 26);
 		Teleop.add(Teleop_comments);
@@ -289,34 +283,42 @@ public class Entry_Page extends JPanel {
 		lblComments_1.setBounds(20, 320, 120, 16);
 		Teleop.add(lblComments_1);
 		
-		JButton btnSave = new JButton("Save");
-		btnSave.setBackground(Color.WHITE);
-		btnSave.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Entry_Page_Setup EPS = new Entry_Page_Setup();
-				EPS.EnterData();
-			}
-		});
-		btnSave.setBounds(172, 279, 117, 29);
-		Teleop.add(btnSave);
+		JLabel lblBlocksInOpposite = new JLabel("Blocks In Opposite Scale:");
+		lblBlocksInOpposite.setBounds(20, 248, 158, 16);
+		Teleop.add(lblBlocksInOpposite);
 		
-		JButton btnCancel = new JButton("Cancel");
-		btnCancel.setBackground(Color.WHITE);
-		btnCancel.addActionListener(new ActionListener() {
+		JButton button = new JButton("+");
+		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Main_Frame.main_panel.removeAll();
-				Main_Frame.main_panel.repaint();
-				Main_Frame.main_panel.revalidate();
-				
-				
-				Main_Frame.main_panel.add(panels.ynEntry);
-				Main_Frame.main_panel.repaint();
-				Main_Frame.main_panel.revalidate();
-				
+				int x = Integer.parseInt(Teleop_Opposite_Scale.getText())+1;
+				Teleop_Opposite_Scale.setText(Integer.toString(x));
 			}
 		});
-		btnCancel.setBounds(20, 279, 117, 29);
-		Teleop.add(btnCancel);
+		button.setBounds(20, 276, 40, 40);
+		Teleop.add(button);
+		
+		JButton button_1 = new JButton("-");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int x = Integer.parseInt(Teleop_Opposite_Scale.getText());
+				int y = Integer.parseInt(Teleop_Opposite_Scale.getText())-1;
+				if(!(x==0)) {
+					Teleop_Opposite_Scale.setText(Integer.toString(y));
+				}
+			}
+		});
+		button_1.setBounds(96, 276, 40, 40);
+		Teleop.add(button_1);
+		
+		Teleop_Opposite_Scale = new JTextField();
+		Teleop_Opposite_Scale.setBounds(138, 282, 130, 26);
+		Teleop.add(Teleop_Opposite_Scale);
+		Teleop_Opposite_Scale.setColumns(10);
+		
+		rdbtnClimbed = new JRadioButton("Climbed");
+		rdbtnClimbed.setBounds(96, 316, 193, 23);
+		Teleop.add(rdbtnClimbed);
+		rdbtnClimbed.setBackground(colors.red);
 		
 		JPanel General = new JPanel();
 		General.setBorder(null);
@@ -379,6 +381,35 @@ public class Entry_Page extends JPanel {
 		});
 		rdbtnSwerve.setBounds(382, 66, 141, 23);
 		General.add(rdbtnSwerve);
+		
+		JButton btnCancel = new JButton("Cancel");
+		btnCancel.setBounds(133, 30, 117, 29);
+		General.add(btnCancel);
+		btnCancel.setBackground(Color.WHITE);
+		
+		JButton btnSave = new JButton("Save");
+		btnSave.setBounds(133, 65, 117, 29);
+		General.add(btnSave);
+		btnSave.setBackground(Color.WHITE);
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Entry_Page_Setup EPS = new Entry_Page_Setup();
+				EPS.EnterData();
+			}
+		});
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Main_Frame.main_panel.removeAll();
+				Main_Frame.main_panel.repaint();
+				Main_Frame.main_panel.revalidate();
+				
+				
+				Main_Frame.main_panel.add(panels.ynEntry);
+				Main_Frame.main_panel.repaint();
+				Main_Frame.main_panel.revalidate();
+				
+			}
+		});
 
 	}
 }

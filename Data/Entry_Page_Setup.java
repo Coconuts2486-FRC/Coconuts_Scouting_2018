@@ -18,6 +18,7 @@ public class Entry_Page_Setup {
 		Entry_Page.Teleop_comments.setText("");
 		Entry_Page.Teleop_switch.setText("0");
 		Entry_Page.Teleop_vault.setText("0");
+		Entry_Page.Teleop_Opposite_Scale.setText("0");
 		Entry_Page.rdbtnClimbed.setSelected(false);
 		Entry_Page.rdbtnCrossedLine.setSelected(false);
 		Entry_Page.rdbtnMechanum.setSelected(false);
@@ -45,6 +46,7 @@ public class Entry_Page_Setup {
 	data.Teleop_blocksInVault=Integer.parseInt(Entry_Page.Teleop_vault.getText());
 	data.Teleop_climbed=Entry_Page.rdbtnClimbed.isSelected();
 	data.Teleop_comments=Entry_Page.Teleop_comments.getText();
+	data.Teleop_blocksInOppositeScale=Integer.parseInt(Entry_Page.Teleop_Opposite_Scale.getText());
 	//General-----------------------------------------------------------------
 	data.redFlag=Entry_Page.rdbtnRedFlag.isSelected();
 	data.yellowFlag=Entry_Page.rdbtnYellowFlag.isSelected();
@@ -113,6 +115,7 @@ public class Entry_Page_Setup {
 		Entry_Page.rdbtnYellowFlag.setSelected(Game_Array.GameList.get(ArrayLocation).yellowFlag);
 		Entry_Page.teamNumber.setText(Integer.toString(Game_Array.GameList.get(ArrayLocation).teamNumber));
 		Entry_Page.roundNumber.setText(Integer.toString(Game_Array.GameList.get(ArrayLocation).roundNumber));
+		Entry_Page.Teleop_Opposite_Scale.setText(Integer.toString(Game_Array.GameList.get(ArrayLocation).Teleop_blocksInOppositeScale));
 		
 		Main_Frame.main_panel.removeAll();
 		Main_Frame.main_panel.repaint();

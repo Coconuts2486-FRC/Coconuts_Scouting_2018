@@ -13,6 +13,7 @@ String Auto_comments;
 int Teleop_blocksInVault;
 int Teleop_blocksInSwitch;
 int Teleop_blocksInScale;
+int Teleop_blocksInOppositeScale;
 
 boolean Teleop_climbed;
 String Teleop_comments;
