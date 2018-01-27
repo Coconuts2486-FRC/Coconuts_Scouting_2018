@@ -32,6 +32,7 @@ public class Main_Panel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				Serelization serelize = new Serelization();
 				serelize.Serelize();
+				System.exit(0);
 				System.out.println("Done");
 			}
 		});
